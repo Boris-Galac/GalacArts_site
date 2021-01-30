@@ -494,6 +494,7 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    overflow-y: hidden;
   }
   #page1 i {
     font-size: 2.5rem;
