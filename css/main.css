@@ -1,0 +1,729 @@
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* KEYFRAMES */
+
+@keyframes links {
+  0% {
+    opacity: 0;
+    left: 800px;
+  }
+  50% {
+    opacity: 0.2;
+  }
+
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes logo {
+  from {
+    right: 200px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes btn {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes pic {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes welcome {
+  from {
+    transform: translateX(550px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/* TRANSITIONS PAGE ANIMATIONS */
+
+.transition-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: coral;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+}
+
+.transition-1.is-active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.transition-2 {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  z-index: 101;
+  background-color: coral;
+  transition: 0.2s ease-out;
+}
+
+.transition-2.is-active {
+  left: 0px;
+}
+
+.transition-3 {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  background-color: coral;
+  transition: 0.2s ease-out;
+}
+
+.transition-3.is-active {
+  top: 0;
+}
+
+/* --------------------- PAGES --------------------- */
+
+#page1::before {
+  content: "";
+  background: url(/img/galac.jpg) center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+#page1 {
+  height: 100vh;
+}
+#page2 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: rgb(226, 190, 158);
+  background: linear-gradient(
+    0deg,
+    rgb(182, 145, 113) 0%,
+    rgba(244, 226, 205, 1) 100%
+  );
+}
+#page3 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: rgb(226, 190, 158);
+  background: linear-gradient(
+    0deg,
+    rgb(182, 145, 113) 0%,
+    rgba(244, 226, 205, 1) 100%
+  );
+}
+
+/* ---------------------end of pages ---------------------*/
+
+/* HEADER */
+#ham {
+  display: none;
+}
+#current {
+  color: rgb(231, 29, 29);
+}
+
+#logo {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  height: 80px;
+  width: 140px;
+  animation: logo 2s forwards ease-out;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  padding-top: 10px;
+  margin-left: 150px;
+}
+header a {
+  font-family: "La Belle Aurore", cursive;
+  padding: 4px 25px;
+  margin-top: 20px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: rgb(54, 0, 0);
+  font-weight: 500;
+  font-size: 37px;
+  position: relative;
+  animation: links 2.2s forwards ease-out;
+}
+
+header a::after {
+  content: "";
+  background: coral;
+  display: block;
+  width: 0px;
+  height: 4px;
+  transition: width 0.3s;
+}
+header a:hover::after {
+  width: 86px;
+  transition: width 0.5s;
+}
+
+/* btn */
+
+.btn {
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  color: white;
+  font-weight: 600;
+  padding: 14px 32px;
+  animation: btn 1s forwards ease-out;
+  transition: 0.5s ease;
+  border-radius: 2px;
+}
+.btn:hover {
+  background: rgb(224, 203, 145);
+  color: rgb(0, 0, 0);
+  outline: solid 2px black;
+}
+.position-naslovna {
+  position: absolute;
+  top: 400px;
+  left: 150px;
+}
+.position-umjetnik {
+  position: absolute;
+  top: 600px;
+  right: 200px;
+}
+/* Naslovna */
+.showcase-naslovna {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-x: hidden;
+}
+.welcome {
+  margin: 15% 5%;
+  grid-column: 3;
+  position: relative;
+  width: 750px;
+  height: 300px;
+  padding-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.288) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  animation: welcome 3s forwards ease-out;
+}
+
+.welcome img {
+  top: 300px;
+  left: 950px;
+  animation: welcome 3s forwards ease-out;
+}
+.welcome h2 {
+  color: white;
+  font-size: 29px;
+  font-weight: 100;
+  top: 440px;
+  left: 950px;
+  animation: welcome 3s forwards ease-out;
+}
+
+/* O umjetniku */
+
+#page2 .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/img/eikcj6ipkhhbd7qn449p87c8ja.png") no-repeat center
+    center/cover;
+}
+
+#page2 .bio-box {
+  height: 100%;
+  width: 80%;
+  padding-top: 80px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#page2 .bio-box .pic {
+  height: 300px;
+  margin: 30px 50px 0 0;
+  border-radius: 15px;
+  animation: pic 1s forwards ease-out;
+  box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.295);
+}
+
+#page2 .bio-box .bio-text {
+  text-indent: 3rem;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow: 2px 2px 1px rgb(121, 121, 121);
+}
+
+/* FOOTER ----------------------*/
+footer {
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.568);
+}
+footer h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+.footer-position {
+  position: absolute;
+  bottom: 4px;
+  left: 12%;
+}
+
+/* KONTAKT --------------------------*/
+.showcase-kontakt {
+  margin: 0 auto;
+  width: 95%;
+  height: 76vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* container b ------- */
+.container-a {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 200px 1fr;
+}
+.cards {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin-left: auto;
+
+  height: 100%;
+  width: 100%;
+}
+.style-adresa {
+  width: 230px;
+}
+.style-email {
+  width: 260px;
+}
+.text {
+  padding-left: 20px;
+}
+.box {
+  margin-top: 4rem;
+  height: 100px;
+  padding: 0 1rem;
+  background: rgba(255, 255, 255, 0.705);
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.288);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+  margin-top: 5em;
+}
+iframe {
+  border: 1px solid rgba(0, 0, 0, 0.452);
+}
+/* container b ------- */
+.container-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+form {
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  width: 70%;
+  background: rgba(226, 225, 225, 0.13);
+  padding: 2rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.123);
+}
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: none;
+}
+
+input[type="submit"] {
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  color: white;
+  font-weight: 600;
+  padding: 14px 32px;
+  animation: btn 1s forwards ease-out;
+  transition: 0.5s ease;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #5c5c5c;
+}
+
+/* RESPONSIVE */
+
+/* iPhone X - 375w */
+@media (max-width: 400px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /* display:none */
+  .welcome {
+    display: none;
+  }
+  .transition {
+    display: none;
+  }
+  /* ------------ */
+  #current {
+    color: white;
+  }
+  /* PAGE 1 - Naslovna */
+  .main-heading {
+    background: rgba(0, 0, 0, 0.205);
+    border-radius: 5px;
+    padding: 2rem;
+    position: absolute;
+    top: 10rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-heading h1 {
+    font-size: 2rem;
+  }
+  .main-heading h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  #page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #page1 i {
+    font-size: 2.5rem;
+    margin: 1.5rem;
+  }
+  #logo {
+    margin: 15px 30%;
+    animation: none;
+  }
+  #ham {
+    top: 15px;
+    left: 8px;
+    position: absolute;
+    display: block;
+  }
+  #close {
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 12px;
+  }
+  header a {
+    color: white;
+    animation: links 0.3s forwards ease-out;
+  }
+  @keyframes links {
+    0% {
+      opacity: 0;
+      right: 800px;
+    }
+    50% {
+      opacity: 0.2;
+    }
+
+    80% {
+      opacity: 0.3;
+    }
+    100% {
+      right: 0;
+    }
+  }
+
+  .side-nav {
+    margin: 0;
+    padding: 0;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.815);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 95%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.459);
+    transition: 0.5s ease-out;
+    display: none;
+  }
+  .side-nav a {
+    margin-left: 2.2em;
+    margin-top: 2em;
+  }
+  .none {
+    display: flex;
+  }
+  .btn {
+    position: absolute;
+    left: 30%;
+  }
+  /* PAGE 2 - O umjetniku*/
+
+  #page2 {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .container .bio-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  #page2 .bio-box .pic {
+    width: 100%;
+    object-fit: cover;
+    margin: 5rem 0 6.5rem 0;
+    border-radius: 15px;
+    animation: pic 1s forwards ease-out;
+    box-shadow: 5px 5px 5px rgba(7, 7, 7, 0.295);
+  }
+
+  #page2 .bio-box .bio-text {
+    text-align: justify;
+    text-indent: 3rem;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 18px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 2px 2px 1px rgb(121, 121, 121);
+    margin-bottom: 50px;
+  }
+  #page2 .btn {
+    position: absolute;
+    top: 490px;
+    display: block;
+    width: 160px;
+  }
+  #page2 footer {
+    position: unset;
+    margin: 0 auto;
+  }
+  #page2 #ham {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+  }
+  #page2 #close {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+  }
+
+  /* PAGE 2 - Kontakt*/
+
+  #page3 {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  #page3 #ham {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+  }
+  #page3 #close {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+  }
+
+  .showcase-kontakt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  .container-a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10em;
+    height: 100%;
+    width: 100%;
+  }
+  .style-adresa {
+    width: 95%;
+  }
+  .style-email {
+    width: 95%;
+  }
+  .text {
+    padding-left: 2em;
+  }
+  .box {
+    margin-top: 0.5rem;
+    height: 75px;
+    padding: 0 4em;
+    background: rgba(255, 255, 255, 0.705);
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.288);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 95%;
+  }
+  .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2em 1em;
+  }
+  #page3 .footer-position {
+    position: unset;
+    margin: 0 auto;
+  }
+  .container-b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  form {
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    width: 95%;
+    background: rgba(226, 225, 225, 0.13);
+    padding: 2rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.123);
+    margin-bottom: 2.5em;
+  }
+  input[type="submit"] {
+    text-decoration: none;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-weight: 600;
+    padding: 14px 32px;
+    animation: btn 1s forwards ease-out;
+    transition: 0.5s ease;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 450px) {
+  .main-heading {
+    display: none;
+  }
+}
