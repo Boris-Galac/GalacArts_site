@@ -4,6 +4,7 @@ let btnClose = document.querySelector('#close')
 let nav =  document.querySelector('.side-nav')
 let page1 = document.querySelector('#page1')
 
+
 // btnHam.onclick = function(){
 //     document.querySelector('.side-nav').style.width = '95%';
 // }
@@ -21,7 +22,7 @@ btnClose.onclick = function(){
 }
 page1.onclick = function(e){
     if(e.target === e.currentTarget && nav.classList.contains('none')){     
-        nav.style.display = 'none'
+        nav.classList.remove('none')
     }
 }
 
